@@ -1,0 +1,26 @@
+---
+title: "Hapmix Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Details from [1]
+
+- SNPs with missing data in the parental genotypes were removed using PLINK 1.07
+- Parental genotypes were phased with fastphases and FCGENE
+- Model selection: time since admixture, recombination rate
+- SNPs ancestries with probabilities higher than 95 percent were considered
+
+## Statistics computation
+
+For SNP $i$, the proportion of Populus balsamifera ancestry in Populus Trichocarpa
+admixed individuals, where $$p_{k,j}^i $$ denotes the probability that SNP $i$ of
+indivual $k$ has $j$ ancestries from Populus Balsamifera
+
+$$\displaystyle P_i^{\text{balsamifera}} = \frac{\sum_{k=1}^n 1 \times 1_{p_{k,2}^i > .95} + 2 \times 1_{p_{k,3}^i > .95}}{2n} $$
+
+
+

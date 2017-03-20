@@ -1,0 +1,58 @@
+---
+title: A PCA-based method to detect introgression
+author: Keurcien Luu, Michael Blum
+date: March 22, 2017 
+output: 
+  ioslides_presentation:
+    incremental: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+
+Example
+
+
+
+## Introduction
+
+## Introduction
+
+
+
+```{r cars}
+library(pcadapt)
+
+```
+
+
+## Method
+
+```{r, echo=FALSE}
+geno <- as.matrix(read.table(read.pcadapt("geno3pops", type = "example")))
+x <- pcadapt(geno, K = 2)
+y <- NULL
+y$scores <- cmpt_local_pca(t(geno), V = x$loadings, sigma = as.vector(x$singular.values), beg = 100, end = 200)
+class(y) <- "pcadapt"
+attr(y, "method") <- "mahalanobis"
+attr(y, "data.type") <- "genotype"
+attr(y, "K") <- 2
+pop <- c(rep("POP1", 50), rep("POP2", 50), rep("POP3", 50))
+plot(x, option = "scores", pop = pop)
+```
+
+## Method
+
+```{r}
+plot(y, option = "scores", pop = pop)
+```
+
+## Simulations
+
+
+## Results
+
