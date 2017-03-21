@@ -8,6 +8,7 @@ output:
     css: presentation/css/styles.css
 ---
 
+---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -18,13 +19,18 @@ Example
 
 ![Populus Balsamifera](presentation/img/Populus_balsamifera.jpg)
 
+---
 
+---
 ## Introduction
 
 Example
 
 ![Populus Balsamifera](presentation/img/Populus_trichocarpa.jpeg)
 
+---
+
+---
 ## Introduction
 
 
@@ -34,6 +40,7 @@ library(pcadapt)
 
 ```
 
+---
 
 ## Method
 

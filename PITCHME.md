@@ -8,6 +8,7 @@ output:
     css: presentation/css/styles.css
 ---
 
+---
 
 
 ## Introduction {#section #img}
@@ -16,13 +17,18 @@ Example
 
 ![Populus Balsamifera](presentation/img/Populus_balsamifera.jpg)
 
+---
 
+---
 ## Introduction
 
 Example
 
 ![Populus Balsamifera](presentation/img/Populus_trichocarpa.jpeg)
 
+---
+
+---
 ## Introduction
 
 
@@ -32,6 +38,7 @@ Example
 library(pcadapt)
 ```
 
+---
 
 ## Method
 
