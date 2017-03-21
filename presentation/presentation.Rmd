@@ -6,42 +6,76 @@ output:
   ioslides_presentation:
     incremental: true
     css: css/styles.css
+    df_print: paged
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Introduction {#section #img}
+## Introduction
 
-Example
+### **Example**
 
-![Populus Balsamifera](img/Populus_balsamifera.jpg)
+Populus Balsamifera            |  Populus Trichocarpa
+:-------------------------:|:-------------------------:
+<img src="img/Populus_balsamifera.jpg" style="width: 350px;"/>  |  <img src="img/Populus_trichocarpa.jpg" style="width: 350px;"/>
 
 
 ## Introduction
 
-Example
+### **Example**
 
-![Populus Balsamifera](img/Populus_trichocarpa.jpeg)
+<div class="centered">
+  <p>Populus hybrid species</p>
+  <img src="img/Populus_hybrid.jpg" style="width: 350px;"/> 
+</div>
 
-## Introduction
+## Method
+
+*"Indeed, many species show chromosome-scale variation in diversity and 
+divergence; species phylogenies can differ along the
+genome due to incomplete lineage sorting, adaptive introgression and/or local 
+adaptation." (Li, 2016)*
+
+## Method
+
+*"Indeed, many species show chromosome-scale variation in diversity and 
+divergence; species phylogenies can differ along the
+genome due to incomplete lineage sorting, adaptive introgression and/or local 
+adaptation." (Li, 2016)*
+
+## Method
+
+### **Step 1: Normalization**
+
+Let $G$ denote the genotype matrix, and $\tilde{G}$ the normalized genotype matrix
+such that for SNP $i$ and individual $j$:
+
+$$\tilde{G}_{ij} = \frac{G_{ij} - f_i}{\sqrt{2 f_i (1 - f_i)}}$$
+where $f_i$ represents the minor allele frequency of SNP $i$.
+
+### **Step 2: PCA**
+
+$$\tilde{G} = U \Sigma V^T$$
+
+## Method
 
 
-
-```{r cars}
-library(pcadapt)
-
-```
 
 
 ## Method
 
 ```{r, echo=FALSE}
+library(pcadapt)
 geno <- as.matrix(read.table(read.pcadapt("geno3pops", type = "example")))
+begin <- 500
+end <- 700
 x <- pcadapt(geno, K = 2)
 y <- NULL
-y$scores <- cmpt_local_pca(t(geno), V = x$loadings, sigma = as.vector(x$singular.values), beg = 100, end = 200)
+geno_s <- scale_geno(geno, ploidy = 2, maf = x$maf, keep_or_not = 1*(x$maf >= 0.05))
+y$scores <- cmpt_local_pca(t(geno_s), V = x$loadings, sigma = as.vector(x$singular.values), beg = begin, end = end)
 class(y) <- "pcadapt"
 attr(y, "method") <- "mahalanobis"
 attr(y, "data.type") <- "genotype"
@@ -50,13 +84,37 @@ pop <- c(rep("POP1", 50), rep("POP2", 50), rep("POP3", 50))
 plot(x, option = "scores", pop = pop)
 ```
 
+
+
 ## Method
 
 ```{r}
 plot(y, option = "scores", pop = pop)
 ```
 
+## Method
+
+```{r, include=FALSE,echo=FALSE}
+geno_local <- geno[begin:end, ]
+x_local <- pcadapt(geno_local, K = 2)
+```
+
+```{r}
+plot(x_local, option = "scores", pop = pop)
+```
+
 ## Simulations
+
+Dataset: Populus
+
+### **Step 1: Ancestral Haplotypes**
+
+Beagle: phase the ancestral haplotypes using the three populations (including the 
+hybrid species)
+
+### **Step 1: **
+
+
 
 
 ## Results
