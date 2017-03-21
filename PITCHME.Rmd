@@ -1,0 +1,9 @@
+---
+<!-- .slide: data-autoslide="10000" -->
+
+#### Get the word out
+
+<span style="color:gray">Markdown Presentations For Developers</span>
+<br>
+
+---
