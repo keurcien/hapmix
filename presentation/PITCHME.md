@@ -1,14 +1,10 @@
 ---
 <!-- .slide: data-autoslide="10000" -->
 
-![LOGO](https://d1z75bzl1vljy2.cloudfront.net/img/gp-logo.png)
-
-#### Hi
+#### A PCA-based Method to detect Introgression
 <br>
-<span style="color:gray">Markdown Presentations For Developers</span>
+<span style="color:gray">Keurcien Luu, Michael Blum</span>
 <br>
-<span style="color:gray">on</span>
-<br>
-<span style="color:gray">GitHub, GitLab and Bitbucket</span>
+<span style="color:gray">March 2017, 22</span>
 
 ---
