@@ -113,7 +113,7 @@ composed of the SNPs present in $W_i$.
 ## Number of individuals: 150
 ```
 
-![](presentation_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](presentation/presentation/presentation_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 
 ---
@@ -124,7 +124,7 @@ composed of the SNPs present in $W_i$.
 plot(y, option = "scores", pop = pop)
 ```
 
-![](presentation_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](presentation/presentation_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 ---
 ## Method
 
@@ -135,7 +135,7 @@ plot(y, option = "scores", pop = pop)
 plot(x_local, option = "scores", pop = pop)
 ```
 
-![](presentation_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](presentation/presentation_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 ---
 ## Simulations
 
@@ -175,7 +175,7 @@ using the mean recombination rate.
 
 - Generate the haplotype clusters based on the recombination map
 
-![](presentation_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](presentation/presentation/presentation_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 ---
 ## Results
