@@ -8,16 +8,11 @@ output:
     css: presentation/css/styles.css
 ---
 
----
-
-
 ## Introduction {#section #img}
 
 Example
 
 ![Populus Balsamifera](presentation/img/Populus_balsamifera.jpg)
-
----
 
 ---
 ## Introduction
@@ -28,7 +23,6 @@ Example
 
 ---
 
----
 ## Introduction
 
 
