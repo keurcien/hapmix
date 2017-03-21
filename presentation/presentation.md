@@ -10,7 +10,7 @@ March 22, 2017
 
 Populus Balsamifera        |  Populus Trichocarpa
 :-------------------------:|:-------------------------:
-<img src="img/Populus_balsamifera.jpg" style="width: 200px;"/>  |  <img src="img/Populus_trichocarpa.jpg" style="width: 200px;"/>
+<img src="presentation/img/Populus_balsamifera.jpg" style="width: 200px;"/>  |  <img src="presentation/img/Populus_trichocarpa.jpg" style="width: 200px;"/>
 Alaska - Newfoundland      | California - Southern Alaska
 Low level of precipitations| Moist
 High frost tolerance       | Mild conditions
@@ -21,7 +21,7 @@ High frost tolerance       | Mild conditions
 
 <div class="centered">
   <p>Populus hybrid species</p>
-  <img src="img/Populus_hybrid.jpg" style="width: 350px;"/> 
+  <img src="presentation/img/Populus_hybrid.jpg" style="width: 350px;"/> 
   <p> 
   - Faster growth rates<br>
   - Cold/Drought tolerance<br>
@@ -50,13 +50,13 @@ High frost tolerance       | Mild conditions
   <div>
   <p> Chromosome 6 <br>
   </p>
-  <img src="img/chr06.png" style="width: 350px;"/> 
+  <img src="presentation/img/chr06.png" style="width: 350px;"/> 
   </div>
   
   <div>
   <p> Chromosome 15 <br>
   </p>
-  <img src="img/chr15.png" style="width: 350px;"/> 
+  <img src="presentation/img/chr15.png" style="width: 350px;"/> 
   </div>
 </div>
 ---
