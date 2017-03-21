@@ -5,7 +5,7 @@ date: March 22, 2017
 output: 
   ioslides_presentation:
     incremental: true
-    css: css/styles.css
+    css: presentation/css/styles.css
 ---
 
 
@@ -14,14 +14,14 @@ output:
 
 Example
 
-![Populus Balsamifera](img/Populus_balsamifera.jpg)
+![Populus Balsamifera](presentation/img/Populus_balsamifera.jpg)
 
 
 ## Introduction
 
 Example
 
-![Populus Balsamifera](img/Populus_trichocarpa.jpeg)
+![Populus Balsamifera](presentation/img/Populus_trichocarpa.jpeg)
 
 ## Introduction
 
