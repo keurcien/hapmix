@@ -8,20 +8,25 @@ output:
     css: css/styles.css
     df_print: paged
     keep_md: true
+header-includes: \usepackage{float}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = 'H')
+
 ```
 
 ## Introduction
 
 ### **Example**
 
-Populus Balsamifera            |  Populus Trichocarpa
+Populus Balsamifera        |  Populus Trichocarpa
 :-------------------------:|:-------------------------:
-<img src="img/Populus_balsamifera.jpg" style="width: 350px;"/>  |  <img src="img/Populus_trichocarpa.jpg" style="width: 350px;"/>
-
+<img src="img/Populus_balsamifera.jpg" style="width: 200px;"/>  |  <img src="img/Populus_trichocarpa.jpg" style="width: 200px;"/>
+Alaska - Newfoundland      | California - Southern Alaska
+Low level of precipitations| Moist
+High frost tolerance       | Mild conditions
 
 ## Introduction
 
@@ -30,14 +35,43 @@ Populus Balsamifera            |  Populus Trichocarpa
 <div class="centered">
   <p>Populus hybrid species</p>
   <img src="img/Populus_hybrid.jpg" style="width: 350px;"/> 
+  <p> 
+  - Faster growth rates<br>
+  - Cold/Drought tolerance<br>
+  
 </div>
 
-## Method
+## Introduction
 
-*"Indeed, many species show chromosome-scale variation in diversity and 
-divergence; species phylogenies can differ along the
-genome due to incomplete lineage sorting, adaptive introgression and/or local 
-adaptation." (Li, 2016)*
+### **Pipeline**
+
+- SNPs with missing data in the parental genotypes were removed using PLINK 1.07
+
+- Parental genotypes were phased with fastphase and FCGENE
+
+- Model selection: time since admixture, recombination rate
+
+- SNPs ancestries with probabilities higher than 95 percent were considered
+
+- Compute the proportions of both ancestries for each remaining SNP
+
+- Average these proportions using sliding windows along each chromosome
+
+## Introduction
+
+<div class="columns-2">
+  <div>
+  <p> Chromosome 6 <br>
+  </p>
+  <img src="img/chr06.png" style="width: 350px;"/> 
+  </div>
+  
+  <div>
+  <p> Chromosome 15 <br>
+  </p>
+  <img src="img/chr15.png" style="width: 350px;"/> 
+  </div>
+</div>
 
 ## Method
 
@@ -62,8 +96,27 @@ $$\tilde{G} = U \Sigma V^T$$
 
 ## Method
 
+### **Step 3: "Local PCA"**
 
+Definition: we call *window for SNP* $i$, and denote it by $W_i$, any set of SNPs containing 
+SNP $i$.
 
+For instance:
+
+- the 100 SNPs following SNP $i$ in the genotype matrix
+
+- the SNPs that are close to SNP $i$ in terms of genetic distance
+
+## Method
+
+### **Step 3: "Local PCA"**
+
+For SNP $i$, compute the contribution $u_i$ of the $i$-th window $W_i$ to the score matrix $U$:
+
+$$u_i = \tilde{G}_{W_i} V_{W_i} \Sigma^{-1}$$
+
+Up to a constant, $u_i$ can be seen as a PCA performed on a genotype matrix 
+composed of the SNPs present in $W_i$.
 
 ## Method
 
@@ -105,17 +158,44 @@ plot(x_local, option = "scores", pop = pop)
 
 ## Simulations
 
-Dataset: Populus
-
 ### **Step 1: Ancestral Haplotypes**
 
-Beagle: phase the ancestral haplotypes using the three populations (including the 
+**Beagle:** phase the ancestral haplotypes using the three populations (including the 
 hybrid species)
 
-### **Step 1: **
+- Ancestral population 1: Populus Trichocarpa
 
+- Ancestral population 2: Populus Balsamifera
 
+- Admixed population: Populus Trichocarpa Hybrid
+
+## Simulations
+
+### **Step 2: Recombination map**
+**vcfR:** extract the physical positions (bp) and convert them into genetic positions (M)
+using the mean recombination rate.
+
+```{r, echo=FALSE, fig.align="center"}
+pos <- c(410, 411, 416, 450, 452, 453, 480, 488); recombination.rate <- 5e-8 
+rates <- data.frame(PHY = pos, GEN = format(pos * recombination.rate, 
+                                 scientific = FALSE, nsmall = 8))
+print(rates)
+```
+
+## Simulations
+
+### **Step 3: Generate a hybrid individual**
+
+- Generate the haplotype clusters based on the recombination map
+
+```{r, echo=FALSE}
+library(lattice)
+hap <- matrix(sample(c(0, 1), size = 50, replace = TRUE), ncol = 2)
+image(hap, col = terrain.colors(2), xaxt = "n", yaxt = "n")
+```
 
 
 ## Results
+
+
 

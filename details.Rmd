@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Details from [1]
 
 - SNPs with missing data in the parental genotypes were removed using PLINK 1.07
-- Parental genotypes were phased with fastphases and FCGENE
+- Parental genotypes were phased with fastphase and FCGENE
 - Model selection: time since admixture, recombination rate
 - SNPs ancestries with probabilities higher than 95 percent were considered
 
